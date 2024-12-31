@@ -6,7 +6,7 @@ spec:
   ipFamilyPolicy: PreferDualStack
   type: ClusterIP
   ports:
-  - port: 8080
-    protocol: TCP
+    - port: 8080
+      protocol: TCP
   selector:
     app: hello-world

@@ -15,20 +15,20 @@ spec:
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-      - name: ctr-web
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-          name: web
-        volumeMounts:
-        - name: webroot
-          mountPath: /usr/share/nginx/html
+        - name: ctr-web
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+              name: web
+          volumeMounts:
+            - name: webroot
+              mountPath: /usr/share/nginx/html
   volumeClaimTemplates:
-  - metadata:
-      name: webroot
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "flash"
-      resources:
-        requests:
-          storage: 1Gi
+    - metadata:
+        name: webroot
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "flash"
+        resources:
+          requests:
+            storage: 1Gi
